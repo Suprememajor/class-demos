@@ -13,16 +13,10 @@ class Person(db.Model):
 	__tablename__ = 'persons'
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(), nullable=False)
+	completed = db.Column(db.Boolean, nullable=False, default=False)
 	
 	def __repr__(self): #For debugging purposes
 		return f'<Person ID: {self.id}, name: {self.name}>'
-
-#db.create_all()
-person = Person(name='John')
-db.session.add(person)
-person = Person(name='Mary')
-db.session.add(person)
-db.session.commit()
 
 
 @app.route('/')

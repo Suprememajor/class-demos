@@ -16,7 +16,7 @@ class Person(db.Model):
 	completed = db.Column(db.Boolean, nullable=False, default=False)
 	
 	def __repr__(self): #For debugging purposes
-		return f'<Person ID: {self.id}, name: {self.name}>'
+		return f'<Person ID: {self.id}, name: {self.name}, completed: {self.completed}>'
 
 
 @app.route('/')

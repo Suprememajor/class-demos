@@ -17,7 +17,7 @@ class Person(db.Model):
 	def __repr__(self): #For debugging purposes
 		return f'<Person ID: {self.id}, name: {self.name}>'
 
-db.create_all()
+db.create_all() # Better to do this using migrations
 person = Person(name='John')
 db.session.add(person)
 person = Person(name='Mary')
